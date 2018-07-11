@@ -1,5 +1,10 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
+
+
+"This code should execute the python3 script in file
+nnoremap <buffer> <F9> :exec '!python3' shellescape(@%, 1)<cr>
+
 "These edits to .vimrc were recommended by RealPython 
 "https://realpython.com/vim-and-python-a-match-made-in-heaven/
 
@@ -85,18 +90,35 @@ let g:ycm_log_level = 'debug'
 
 "This is end of edits from RealPython
 
+"This setup is to mark indents and freespace
+"set autoindent " Preserve current indent on new lines
+"set cindent " set C style indent
+"set expandtab " Convert all tabs typed to spaces
+"set softtabstop=4 " Indentation levels every four columns
+"set shiftwidth=4 " Indent/outdent by four columns
+"set shiftround " Indent/outdent to nearest tabstop
+"let g:indentLine_setColors = 1
+"let g:indentLine_loaded = 1
+"let g:indentLine_color_term = 249
+"let g:indentLine_bgcolor_term = 239
+"let g:indentLine_bgcolor_gui = '#FF5F00'
+"let g:indentLine_char = '┆'
+"let g:indentLine_concealcursor = 'inc'
+"let g:indentLine_conceallevel = 2
+"let g:indentLine_enabled = 1
+
 "This setup was found at https://shapeshed.com/vim-netrw/
 "It will give you a nerdtree like file explorer view with the native netrw
 "file browser that comes with vim
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 2
-let g:netrw_altv = 1
-let g:netrw_winsize = 25
-augroup ProjectDrawer
-  autocmd!
-  autocmd VimEnter * :Vexplore
-augroup END
+"let g:netrw_banner = 0
+"let g:netrw_liststyle = 3
+"let g:netrw_browse_split = 2
+"let g:netrw_altv = 1
+"let g:netrw_winsize = 25
+"augroup ProjectDrawer
+"  autocmd!
+"  autocmd VimEnter * :Vexplore
+"augroup END
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -161,6 +183,10 @@ Plugin 'tpope/vim-fugitive'
 "Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+
+"These two plugins highlight indents and buffers 
+"Plugin 'indentLine'
+"Plugin 'bling/vim-bufferline'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
