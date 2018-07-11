@@ -21,21 +21,22 @@ nnoremap <space> za
 
 "Enable Python PEP 8 indentation
 au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=79
-    \ set expandtab
-    \ set autoindent
-    \ set fileformat=unix
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix |
 
 "Enable buffers for full stack development
 au BufNewFile,BufRead *.js, *.html, *.css
-    \ set tabstop=2
-    \ set softtabstop=2
-    \ set shiftwidth=2
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
 
 "Enable flagging of unnecessary whitespaces
+highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 "Set encoding to UTF-8
@@ -79,6 +80,9 @@ set nu
 "Allow copy/paste in and out of vim
 set clipboard=unnamed
 
+"Debug for ycm compile
+let g:ycm_log_level = 'debug'
+
 "This is end of edits from RealPython
 
 "This setup was found at https://shapeshed.com/vim-netrw/
@@ -86,7 +90,7 @@ set clipboard=unnamed
 "file browser that comes with vim
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
+let g:netrw_browse_split = 2
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
 augroup ProjectDrawer
