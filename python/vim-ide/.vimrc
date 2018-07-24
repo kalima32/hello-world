@@ -36,6 +36,9 @@ highlight BadWhitespace ctermbg=yellow guibg=orange
 autocmd BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 "autocmd BufRead,BufEnter,BufNewFile * IndentLinesReset
 
+"Enable markup for .yml plugin for ansible
+autocmd BufRead,BufNewFile */playbooks/*.yml set filetype=yaml.ansible
+
 "Plugin modifications SimpylFold
 "let g:SimpylFold_docstring_preview=1
 
@@ -128,6 +131,9 @@ Plugin 'Yggdroot/indentLine'
 
 "This plugin shows buffers in airline bar
 Plugin 'bling/vim-bufferline'
+
+"This plugin is for ansible playbooks
+Plugin 'pearofducks/ansible-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
